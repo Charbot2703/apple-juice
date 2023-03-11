@@ -45,3 +45,4 @@ function mainFunction()
     main.getPrompt();
     main.processInputFromUser(main.inputPrompt);
 }
+
