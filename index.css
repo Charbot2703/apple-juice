@@ -9,7 +9,6 @@ body{
 .center {
     margin: auto;
     width: 50%;
-    padding: 10px;
   }
 
 /* Header Cells */
@@ -24,12 +23,11 @@ body{
 }
 
 #input{
+    width:640px;
     background: #FFFAE7;
     grid-area: input;
     padding: 3px;
-    margin-bottom: 20px;
     border-radius: 10px;
-
 }
 
 .submit{
@@ -38,7 +36,6 @@ body{
     font-size: 28px;
     color: #FFFAE7;
     background: #8C614F;
-    margin-bottom: 20px;
     grid-area: submit;
     border-radius: 10px;
 }
@@ -49,16 +46,22 @@ body{
     grid-area: image;}
 
 .instruct{
-        width: 265px;
-        height: 512px;
-        background: #FFFAE7;
-        grid-area: instruct;}
+    width: 256px;
+    height: 512px;
+    background: #FFFAE7;
+    grid-area: instruct;}
 
 
-.grid{
+.grid-top{
     display: grid;
     grid-template-areas: 
     'header header header' 
-    'input input submit'
-    'instruct image image';
+    'input input submit';
 }
+
+.grid-item{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
