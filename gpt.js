@@ -1,6 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai");
 
-class OpenAI {
+export default class ChatGPT {
     constructor(apiKey) {
         this.openai = new OpenAIApi(new Configuration({ apiKey }));
     }
@@ -34,8 +34,10 @@ class OpenAI {
     }
 }
 
+let chatgpt = new ChatGPT;
+window.ChatGPT = chatgpt;
 
-const openAI = new OpenAI("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")
-openAI.getDetailed("How to ride a bike")
-openAI.getSimple("1. Make sure the bike is setup correctly for your height. 2. Put on the appropriate safety equipment. 3. Get on the bike, with one foot on a pedal. 4. Push off with your foot on the ground. 5. As you are moving, place the other foot on the pedal. 6. Keep your feet on the pedals and use them to help keep the bike moving. 7. Move the handlebars in the direction you want to go. 8. Use the brakes to slow down or stop when needed.")
+// const chatGPT = new ChatGPT("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")
+// chatGPT.getDetailed("How to ride a bike")
+// chatGPT.getSimple("1. Make sure the bike is setup correctly for your height. 2. Put on the appropriate safety equipment. 3. Get on the bike, with one foot on a pedal. 4. Push off with your foot on the ground. 5. As you are moving, place the other foot on the pedal. 6. Keep your feet on the pedals and use them to help keep the bike moving. 7. Move the handlebars in the direction you want to go. 8. Use the brakes to slow down or stop when needed.")
 

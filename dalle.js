@@ -23,3 +23,6 @@ class DallE {
     }
   }
 }
+
+let dalle = new DallE;
+window.DallE = dalle;
