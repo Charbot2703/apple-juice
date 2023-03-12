@@ -22,6 +22,13 @@ p {
     color: #FFFAE7;
 }
 
+#description {
+    font-size: 15px;
+    color: #FFFAE7;
+    padding: 10px 0px 0px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #intro{
     height: 500px;
     margin: 0px;
@@ -58,17 +65,23 @@ p {
     display: inline-block;
     padding: 0px 10px;
     margin: 0px 5px;
-<<<<<<< Updated upstream
-    transition: 0.3s
-=======
-    transition: 0.3s;
->>>>>>> Stashed changes
+    transition: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+#input:hover{
+    width: 700px;
+}
+
+#input:focus{
+    width: 700px;
 }
 
 #submit{
     width: 128px;
     height: 100%;
     font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     color: #FFFAE7;
     background: #2d2b32;
     border: none;
