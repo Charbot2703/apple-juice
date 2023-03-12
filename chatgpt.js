@@ -10,7 +10,7 @@ class ChatGPT {
         xhr.open("POST", url);
 
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader("Authorization", "Bearer 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");
+        xhr.setRequestHeader("Authorization", "Bearer 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");
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
