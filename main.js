@@ -18,6 +18,7 @@ class Main {
 
     async processInputFromUser(input)
     {
+        window.dallEResponse = [];
         //Get Detailed instructions
         this.detailedInstructionPromise = window.ChatGPT.getDetailed(input)
         await new Promise(r => setTimeout(r, 8000));
@@ -43,12 +44,6 @@ class Main {
         
         for(let i = 0; i < response.length; i++)
         {
-            // this.dalleImagePromise = window.DallE.getImage(response[i], input);
-            // //await new Promise(r => setTimeout(r, 13000));
-            // images.push(window.dallEResponse);
-
-            // console.log("Image " + i);
-            // console.log(images[i].data[0].url);
             this.pushImages(i, response)
         }
 
