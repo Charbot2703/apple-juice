@@ -109,6 +109,7 @@ p {
 .instruct{
     width: 256px;
     height: 512px;
+    color:black;
     background: #FFFAE7;
     color: black;
     box-shadow: 5px 0px 20px;
