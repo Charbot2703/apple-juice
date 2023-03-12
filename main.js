@@ -33,20 +33,10 @@ class Main {
         await new Promise(r => setTimeout(r, 8000));
         response = window.open_ai_response.choices[0].text;
         response = response.substr(2)
-        console.log("asdsadResponse:")
+        console.log("Simple Response")
         console.log(response)
 
         //Break simple instructions block into array of steps
-
-
-        // this.dalleImagePromise = window.DallE.getImage(input);
-
-        // await new Promise(r => setTimeout(r, 8000));
-        // response = window.dallEResponse;
-
-        // console.log("Image things");
-        // console.log(response);
-
         
         response = response.split(";");
         const images = [];
@@ -60,13 +50,42 @@ class Main {
             console.log("Image " + i);
             console.log(images[i].data[0].url);
         }
-        // for(let i = 0; i < response.length; i++)
-        // {
-        //     window.DallE.getImage(response[i]);
-        //     console.log(response[i]);
-        // }
+    }
 
-        // console.log(this.simpleInstructionBlock);
+    addAllInstructions(captions, imageUrls)
+    {
+        for (let i = 0; i < captions.length; i++)
+        {
+            this.addInstruction(captions[i], imageUrls[i]);
+        }
+    }
+
+    addInstruction(caption, imageUrl)
+    {
+        // Create a new instruction element
+        const instructionElement = document.createElement("div");
+        instructionElement.className = "grid-item";
+
+        // Add the caption div
+        const captionElement = document.createElement("div");
+        captionElement.className = "instruct";
+        const actualCaption = document.createElement("p");
+        actualCaption.innerHTML = caption;
+        captionElement.appendChild(actualCaption);
+
+        // Add the image div
+        const imageElement = document.createElement("div");
+        imageElement.className = "image";
+        const actualImage = document.createElement("img");
+        actualImage.src = imageUrl;
+        imageElement.appendChild(actualImage);
+
+        // Append to instructions element
+        instructionElement.appendChild(captionElement);
+        instructionElement.appendChild(imageElement);
+
+        // Append the created instructions to the full grid
+        document.getElementById("instructions-grid").appendChild(instructionElement);
     }
 }
 
@@ -78,4 +97,3 @@ function submit()
     main.getPrompt();
     main.processInputFromUser(main.inputPrompt);
 }
-
