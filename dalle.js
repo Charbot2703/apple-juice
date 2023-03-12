@@ -9,7 +9,7 @@ class DallE {
     xhr.open("POST", url);
 
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Authorization", "Bearer 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");
+    xhr.setRequestHeader("Authorization", "Bearer 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");
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {

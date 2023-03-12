@@ -43,13 +43,25 @@ class Main {
         
         for(let i = 0; i < response.length; i++)
         {
-            this.dalleImagePromise = window.DallE.getImage(response[i], input);
-            await new Promise(r => setTimeout(r, 13000));
-            images.push(window.dallEResponse);
+            // this.dalleImagePromise = window.DallE.getImage(response[i], input);
+            // //await new Promise(r => setTimeout(r, 13000));
+            // images.push(window.dallEResponse);
 
-            console.log("Image " + i);
-            console.log(images[i].data[0].url);
+            // console.log("Image " + i);
+            // console.log(images[i].data[0].url);
+            this.pushImages(i, images, response)
         }
+    }
+
+    async pushImages(i, images, response)
+    {
+        console.log(i)
+        this.dalleImagePromise = window.DallE.getImage(response[i], input);
+        await new Promise(r => setTimeout(r, 13000));
+        images.push(window.dallEResponse);
+
+        console.log("Image " + i);
+        console.log(images[i].data[0].url);
     }
 
     addAllInstructions(captions, imageUrls)
