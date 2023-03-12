@@ -3,7 +3,7 @@ class Main {
     constructor()
     {
         // Init api object stuff
-        this.gpt = window.ChatGPT;
+        //this.gpt = window.ChatGPT;
         this.dalle = window.DallE;
     }
 
@@ -12,34 +12,64 @@ class Main {
         this.inputPrompt = document.getElementById("input").value;
     }
 
-    processInputFromUser(input)
+    async PromiseExample(promise) {
+        try {
+          const value = await promise;
+          console.log(value); //This is a promise  👈
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+    async processInputFromUser(input)
     {
         console.log(input);
         //Get Detailed instructions
-        this.detailedInstructionPromise = this.gpt.getDetailed(input);
-        this.detailedInstructionPromise.then((value) =>{
-            console.log(value);
-            console.log("ASIDJASJHFJAD");
-        });
-        //this.simpleInstructionBlock = "Riding a bike is a great way to get around. Here are the steps you need to follow to ride a bike:\n1. Begin by adjusting the seat so that it is at a comfortable height for you.\n";
-        //Get Simple instruction block
-        //this.simpleInstructionPromise = this.gpt.getSimple(this.detailedInstructions);
+        this.detailedInstructionPromise = window.ChatGPT.getDetailed(input)
+        .then((response) => this.doThing(response));
+        console.log("daflkhjd")
+        await new Promise(r => setTimeout(r, 8000));
+        console.log("Response:")
+        console.log(window.open_ai_response.choices[0].text)
+        // const printAddress = async () => {
+        //     const a = await this.detailedInstructionPromise;
+        //     this.doThing(a);
+        // };
+        // printAddress()
+    }
 
-        //Break simple instructions block into array of steps
+    sleep(ms)
+    {
+        let time = 1;
+    }
 
-
-        //his.simpleInstructionBlock = this.simpleInstructionBlock.split(/\r?\n/);
-
-        
-        // for(let i = 0; i < this.simpleInstructionBlock.length; i++)
-        // {
-        //     this.dalle.getImage(this.simpleInstructionBlock[i]);
-        //     console.log(this.simpleInstructionBlock[i]);
-        // }
-
-        // console.log(this.simpleInstructionBlock);
+    doThing(aa){
+        console.log(aa);
     }
 }
+//         printAddress();
+//         // this.detailedInstructionPromise.finally((value) =>{
+//         //     console.log("westupid")
+//         // });
+//         //this.simpleInstructionBlock = "Riding a bike is a great way to get around. Here are the steps you need to follow to ride a bike:\n1. Begin by adjusting the seat so that it is at a comfortable height for you.\n";
+//         //Get Simple instruction block
+//         //this.simpleInstructionPromise = this.gpt.getSimple(this.detailedInstructions);
+
+//         //Break simple instructions block into array of steps
+
+
+//         //his.simpleInstructionBlock = this.simpleInstructionBlock.split(/\r?\n/);
+
+        
+//         // for(let i = 0; i < this.simpleInstructionBlock.length; i++)
+//         // {
+//         //     this.dalle.getImage(this.simpleInstructionBlock[i]);
+//         //     console.log(this.simpleInstructionBlock[i]);
+//         // }
+
+//         // console.log(this.simpleInstructionBlock);
+//     }
+// }
 
 //Get the input from the html file
 let main = new Main();
