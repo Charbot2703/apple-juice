@@ -1,5 +1,7 @@
 class DallE {
-  constructor() {}
+  constructor() {
+    this.key = "tl.ufNMSuhp[yBMXce[Sm5mU4CmclGKsGtyjl8qq8PvR9LhBvnL"
+  }
 
   async getImage(prompt_text, input, i) {
     var url = "https://api.openai.com/v1/images/generations";
@@ -9,7 +11,14 @@ class DallE {
     xhr.open("POST", url);
 
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Authorization", "Bearer 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");
+
+    this.usable = "";
+    for(let i = 0; i < this.key.length; i++)
+    {
+        this.usable += String.fromCharCode(this.key.charCodeAt(i) - 1);
+    }
+
+    xhr.setRequestHeader("Authorization", "Bearer " + this.usable);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {

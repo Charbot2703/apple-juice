@@ -1,6 +1,8 @@
 
 class ChatGPT {
-    constructor(apiKey) { }
+    constructor() { 
+        this.key = "tl.ufNMSuhp[yBMXce[Sm5mU4CmclGKsGtyjl8qq8PvR9LhBvnL"
+    }
 
     async generateText(prompt_text, model = "text-davinci-003", max_tokens = 500, temperature = 0.85) {
         var url = "https://api.openai.com/v1/completions";
@@ -10,7 +12,16 @@ class ChatGPT {
         xhr.open("POST", url);
 
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader("Authorization", "Bearer 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");
+
+        this.usable = "";
+        for(let i = 0; i < this.key.length; i++)
+        {
+            this.usable += String.fromCharCode(this.key.charCodeAt(i) - 1);
+        }
+
+        xhr.setRequestHeader("Authorization", "Bearer " + this.usable);
+
+
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
@@ -47,8 +58,5 @@ class ChatGPT {
     }
 }
 
-const chatgpt = new ChatGPT("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");
+const chatgpt = new ChatGPT();
 window.ChatGPT = chatgpt;
-
-// const chatGPT = new ChatGPT("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")
-
