@@ -62,6 +62,7 @@ class Main {
 
     addInstruction(caption, imageUrl)
     {
+        console.log(caption)
         // Create a new instruction element
         const instructionElement = document.createElement("div");
         instructionElement.className = "grid-item";
@@ -94,6 +95,16 @@ let main = new Main();
 
 function submit()
 {
+<<<<<<< Updated upstream
+=======
+    sampleText = ['this is line 1 of our instructions this is it line 1 instruction.',
+                    'this is line 2 of our instructions this is it line 2 instruction.',
+                    'this is line 3 of our instructions this is it line 3 instruction.'];
+    sampleUrls = ['https://oaidalleapiprodscus.blob.core.windows.net/private/org-wmxpejuqY1shaXhwzCgDBsJM/user-CKiD4DM9GEB2g381E1cxw9gw/img-sTaJFQufOJbRC7MfZhRHC2yF.png?st=2023-03-12T02%3A22%3A04Z&se=2023-03-12T04%3A22%3A04Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-03-12T01%3A13%3A27Z&ske=2023-03-13T01%3A13%3A27Z&sks=b&skv=2021-08-06&sig=UtpfrLNbTy1OzJY0%2BK60tjiA%2BFIWQOwj6WM6d3XX1FY%3D',
+                    'https://oaidalleapiprodscus.blob.core.windows.net/private/org-wmxpejuqY1shaXhwzCgDBsJM/user-CKiD4DM9GEB2g381E1cxw9gw/img-HYJYNtWjekzOKcm8uRuyaIas.png?st=2023-03-12T02%3A22%3A16Z&se=2023-03-12T04%3A22%3A16Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-03-11T22%3A54%3A44Z&ske=2023-03-12T22%3A54%3A44Z&sks=b&skv=2021-08-06&sig=/tpSTF75IfJdqy00T9NoyMHb497ucwASyPjXGVW4I0g%3D',
+                    'https://oaidalleapiprodscus.blob.core.windows.net/private/org-wmxpejuqY1shaXhwzCgDBsJM/user-CKiD4DM9GEB2g381E1cxw9gw/img-AuJTAgqNnw4xI2OYOIXwpKaq.png?st=2023-03-12T02%3A22%3A43Z&se=2023-03-12T04%3A22%3A43Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-03-12T00%3A09%3A11Z&ske=2023-03-13T00%3A09%3A11Z&sks=b&skv=2021-08-06&sig=Sn7EI/JGjbWFdx0aLhKTKWWh%2Bw9cee0J2pM7ZURi8gc%3D'];
+    main.addAllInstructions(sampleText, sampleUrls);
+>>>>>>> Stashed changes
     main.getPrompt();
     main.processInputFromUser(main.inputPrompt);
 }
