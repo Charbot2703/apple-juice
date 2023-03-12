@@ -66,6 +66,8 @@ class Main {
 
     addAllInstructions(captions, imageUrls)
     {
+        document.getElementById("instructions-grid").innerHTML = '';
+
         for (let i = 0; i < captions.length; i++)
         {
             this.addInstruction(captions[i], imageUrls[i]);
@@ -74,7 +76,6 @@ class Main {
 
     addInstruction(caption, imageUrl)
     {
-        console.log(caption)
         // Create a new instruction element
         const instructionElement = document.createElement("div");
         instructionElement.className = "grid-item";
@@ -107,6 +108,23 @@ let main = new Main();
 
 function submit()
 {
-    main.getPrompt();
-    main.processInputFromUser(main.inputPrompt);
+    try {
+        // Display loading message
+        document.getElementById("instructions-grid").innerHTML = '';
+        const loadingMsg = document.createElement("p");
+        loadingMsg.className="status-display";
+        loadingMsg.innerHTML = "Generating your instructions...";
+        document.getElementById("instructions-grid").appendChild(loadingMsg);
+
+        main.getPrompt();
+        main.processInputFromUser(main.inputPrompt);
+    }
+    catch(error){
+        // Display failure message
+        document.getElementById("instructions-grid").innerHTML = '';
+        const errorMsg = document.createElement("p");
+        errorMsg.className="status-display";
+        errorMsg.innerHTML = "Error encountered generating instructions.";
+        document.getElementById("instructions-grid").appendChild(instructionElement);
+    }
 }
