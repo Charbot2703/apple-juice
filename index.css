@@ -3,42 +3,84 @@
 }
 
 body{
-    background-color: #1A1820;
+    background-color: #2d2b32;
+    text-align: center;
+    display: block;
 }
 
-.center {
-    margin: auto;
-    width: 50%;
-  }
-
 /* Header Cells */
-.header{
-    font-size: 64px;
+
+h1 {
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 4px;
     color: #FFFAE7;
-    width: 768px;
-    height: 100px;
-    grid-area: header; 
-    display: flex;
-    justify-content: center;
+}
+
+p {
+    font-size: 30px;
+    color: #FFFAE7;
+}
+
+#intro{
+    height: 500px;
+    margin: 0px;
+    background-image: url("apple-juice.png");
+    background-size: 100%;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#submission{
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin: 40px 0px;
+}
+
+#header{
+    color: black;
+    width: 100%;
+    grid-area: header;
+    text-align: center;
+    padding: 100px 0px 20px 0px;
 }
 
 #input{
-    width:640px;
+    width: 640px;
+    height: 100%;
+    font-size: 15px;
     background: #FFFAE7;
-    grid-area: input;
-    padding: 3px;
+    border: none;
+    /*grid-area: input;*/
     border-radius: 10px;
+    display: inline-block;
+    padding: 0px 10px;
+    margin: 0px 5px;
+    transition: 0.3s
 }
 
-.submit{
-    width: 128px;
-    height: 51.2px;
-    font-size: 28px;
-    color: #FFFAE7;
-    background: #8C614F;
-    grid-area: submit;
-    border-radius: 10px;
+#input:hover{
 }
+
+#submit{
+    width: 128px;
+    height: 100%;
+    font-size: 15px;
+    color: #FFFAE7;
+    background: #2d2b32;
+    border: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    background: #434147;
+    cursor: pointer;
+}
+
 .image{
     width: 512px;
     height: 512px;
@@ -51,17 +93,16 @@ body{
     background: #FFFAE7;
     grid-area: instruct;}
 
-
+/*
 .grid-top{
     display: grid;
     grid-template-areas: 
     'header header header' 
     'input input submit';
-}
+}*/
 
 .grid-item{
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
 }
-

@@ -39,6 +39,42 @@ class Main {
 
         // console.log(this.simpleInstructionBlock);
     }
+
+    addAllInstructions(captions, imageUrls)
+    {
+        for (let i = 0; i < captions.length; i++)
+        {
+            this.addInstruction(captions[i], imageUrls[i]);
+        }
+    }
+
+    addInstruction(caption, imageUrl)
+    {
+        // Create a new instruction element
+        const instructionElement = document.createElement("div");
+        instructionElement.className = "grid-item";
+
+        // Add the caption div
+        const captionElement = document.createElement("div");
+        captionElement.className = "instruct";
+        const actualCaption = document.createElement("p");
+        actualCaption.innerHTML = caption;
+        captionElement.appendChild(actualCaption);
+
+        // Add the image div
+        const imageElement = document.createElement("div");
+        imageElement.className = "image";
+        const actualImage = document.createElement("img");
+        actualImage.src = imageUrl;
+        imageElement.appendChild(actualImage);
+
+        // Append to instructions element
+        instructionElement.appendChild(captionElement);
+        instructionElement.appendChild(imageElement);
+
+        // Append the created instructions to the full grid
+        document.getElementById("instructions-grid").appendChild(instructionElement);
+    }
 }
 
 //Get the input from the html file
@@ -46,7 +82,7 @@ let main = new Main();
 
 function submit()
 {
+    main.addAllInstructions(sampleCap, sampleUrl);
     main.getPrompt();
     main.processInputFromUser(main.inputPrompt);
 }
-
