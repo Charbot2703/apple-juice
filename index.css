@@ -58,7 +58,11 @@ p {
     display: inline-block;
     padding: 0px 10px;
     margin: 0px 5px;
+<<<<<<< Updated upstream
     transition: 0.3s
+=======
+    transition: 0.3s;
+>>>>>>> Stashed changes
 }
 
 #submit{
@@ -82,14 +86,35 @@ p {
     width: 512px;
     height: 512px;
     background: #52392F;
-    grid-area: image;}
+    grid-area: image;
+    box-shadow: 10px 0px 10px;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.image img{
+    border-radius: 0px 25px 25px 0px;
+}
 
 .instruct{
     width: 256px;
     height: 512px;
     background: #FFFAE7;
-    grid-area: instruct;}
+    color: black;
+    box-shadow: 5px 0px 20px;
+    border-radius: 25px 0px 0px 25px;
+}
 
+.instruct p{
+    padding: 50%;
+    font-size: 25px;
+    color: black;
+    padding: 15px 15px;
+    text-align: justify;
+}
+
+#instructions-grid{
+    padding: 40px;
+}
 /*
 .grid-top{
     display: grid;
@@ -102,4 +127,9 @@ p {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+#page-info{
+    font-size: 15px;
+    padding: 30px;
 }
