@@ -21,17 +21,17 @@ class Main {
         //Get Detailed instructions
         this.detailedInstructionPromise = window.ChatGPT.getDetailed(input)
         await new Promise(r => setTimeout(r, 8000));
-        let response = window.open_ai_response.choices[0].text;
-        response = response.replace(/(\r\n|\n|\r)/gm, "");
+        let responseDetail = window.open_ai_response.choices[0].text;
+        responseDetail = responseDetail.replace(/(\r\n|\n|\r)/gm, "");
         console.log("Response:")
-        console.log(response)
+        console.log(responseDetail)
 
         //window.open_ai_response.choices[0].text is response
         //Get Simple instruction block
-        this.simpleInstructionPromise = window.ChatGPT.getSimple(response);
+        this.simpleInstructionPromise = window.ChatGPT.getSimple(responseDetail);
 
         await new Promise(r => setTimeout(r, 8000));
-        response = window.open_ai_response.choices[0].text;
+        let response = window.open_ai_response.choices[0].text;
         response = response.substr(2)
         console.log("Simple Response")
         console.log(response)
@@ -39,7 +39,7 @@ class Main {
         //Break simple instructions block into array of steps
         
         response = response.split(";");
-        const images = [];
+        window.images = [];
         
         for(let i = 0; i < response.length; i++)
         {
@@ -49,29 +49,31 @@ class Main {
 
             // console.log("Image " + i);
             // console.log(images[i].data[0].url);
-            this.pushImages(i, images, response)
+            this.pushImages(i, response)
         }
-    }
 
-    async pushImages(i, images, response)
-    {
-        console.log(i)
-        this.dalleImagePromise = window.DallE.getImage(response[i], input);
-        await new Promise(r => setTimeout(r, 13000));
-        images.push(window.dallEResponse);
-
-        console.log("Image " + i);
-        console.log(images[i].data[0].url);
-    }
-
-    addAllInstructions(captions, imageUrls)
-    {
-        document.getElementById("instructions-grid").innerHTML = '';
-
-        for (let i = 0; i < captions.length; i++)
+        while(window.images.length < response.length)
         {
-            this.addInstruction(captions[i], imageUrls[i]);
+            await new Promise(r => setTimeout(r, 1000));
         }
+        console.log("All images received")
+        document.getElementById("instructions-grid").innerHTML = '';
+        responseDetail = responseDetail.split(";");
+        for(let i = 0; i < responseDetail.length; i++)
+        {
+            for(let j = 0; j < window.images.length; j++)
+            {
+                if(window.images[j][1] == i)
+                {
+                    this.addInstruction(responseDetail[i], window.images[j][0].data[0].url);
+                }
+            }
+        }
+    }
+
+    async pushImages(i, response)
+    {
+        this.dalleImagePromise = window.DallE.getImage(response[i], input, i);
     }
 
     addInstruction(caption, imageUrl)

@@ -37,7 +37,7 @@ class ChatGPT {
     }
 
     getSimple(prompt) {
-        let editedPrompt = "Simplify these steps as much as possible: " + prompt + " and keep the steps separated by semi-colons"
+        let editedPrompt = "Simplify these steps as much as possible: " + prompt + " and keep the steps separated by semi-colons. Please also make the new steps be a description of an image depicting the step."
         return this.generateText(editedPrompt)
     }
 }

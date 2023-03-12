@@ -1,7 +1,7 @@
 class DallE {
   constructor() {}
 
-  async getImage(prompt_text, input) {
+  async getImage(prompt_text, input, i) {
     var url = "https://api.openai.com/v1/images/generations";
     var open_ai_response;
 
@@ -15,17 +15,16 @@ class DallE {
         if (xhr.readyState === 4) {
             window.dallEResponse = JSON.parse(xhr.responseText);
             console.log(window.dallEResponse)
+            window.images.push([window.dallEResponse, i])
         }
     };
 
     var data = `{
-        "prompt": "${prompt_text} as a step in accomplishing the following task: ${input}",
+        "prompt": "${prompt_text} as a step in accomplishing the following task: ${input}. Please make the image as simple as possible. ",
         "n": 1,
         "size": "512x512"
     }`;
     
-    console.log(prompt_text)
-
     xhr.send(data);
 }
 }
