@@ -32,12 +32,17 @@ class ChatGPT {
     }
 
     getDetailed(prompt) {
-        let editedPrompt = "Write steps on how: " + prompt + ", it should be easy to understand and separate the steps with a semi-colon"
+        let editedPrompt = "Write detailed steps on how: " + prompt + ", it should be easy to understand and separate the steps with a semi-colon"
         return this.generateText(editedPrompt)
     }
 
     getSimple(prompt) {
         let editedPrompt = "Simplify these steps as much as possible: " + prompt + " and keep the steps separated by semi-colons. Please also make the new steps be a description of an image depicting the step."
+        return this.generateText(editedPrompt)
+    }
+
+    getDetailedImageDescription(question, bulletpoints){
+        let editedPrompt = "Take the main topic of each bullet point below. And keep in mind the problem " + question + " . And create only one descriptive image for each point separating each by a semicolon. "  + bulletpoints
         return this.generateText(editedPrompt)
     }
 }
