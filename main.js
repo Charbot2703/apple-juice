@@ -107,10 +107,16 @@ class Main {
     }
 }
 
+var http = require('http');
+http.createServer(function (req, res) {
+    console.log(`Just got a request at ${req.url}!`)
+    res.write('Yo!');
+    res.end();
+}).listen(process.env.PORT || 3000);
+
+
 //Get the input from the html file
 let main = new Main();
-
-app.listen(3000);
 
 function submit()
 {
