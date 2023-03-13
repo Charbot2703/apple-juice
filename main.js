@@ -110,6 +110,8 @@ class Main {
 //Get the input from the html file
 let main = new Main();
 
+app.listen(3000);
+
 function submit()
 {
     try {
