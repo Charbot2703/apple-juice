@@ -107,12 +107,23 @@ class Main {
     }
 }
 
-var http = require('http');
-http.createServer(function (req, res) {
-    console.log(`Just got a request at ${req.url}!`)
-    res.write('Yo!');
-    res.end();
-}).listen(process.env.PORT || 3000);
+const express = require('express');
+const app = express();
+
+const PORT = 3000;
+
+// Serve static files from the "public" directory
+//app.use(express.static('./'));
+
+// Serve the index.html file as the root route
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
 
 
 //Get the input from the html file
