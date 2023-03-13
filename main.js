@@ -123,7 +123,7 @@ app.listen(PORT, () => {
 });
 
 // Serve the style.css file
-app.get('/style.css', (req, res) => {
+app.get('/index.css', (req, res) => {
   res.sendFile(__dirname + '/index.css');
 });
 
