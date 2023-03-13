@@ -112,9 +112,6 @@ const app = express();
 
 const PORT = 3000;
 
-// Serve static files from the "public" directory
-//app.use(express.static('./'));
-
 // Serve the index.html file as the root route
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -123,6 +120,11 @@ app.get('/', (req, res) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+});
+
+// Serve the style.css file
+app.get('/style.css', (req, res) => {
+  res.sendFile(__dirname + '/index.css');
 });
 
 
