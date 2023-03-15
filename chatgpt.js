@@ -4,7 +4,7 @@ class ChatGPT {
         this.key = "tl.ufNMSuhp[yBMXce[Sm5mU4CmclGKsGtyjl8qq8PvR9LhBvnL"
     }
 
-    async generateText(prompt_text, model = "text-davinci-003", max_tokens = 500, temperature = 0.85) {
+    async generateText(prompt_text, model = "text-davinci-003", max_tokens = 1250, temperature = 0.85) {
         var url = "https://api.openai.com/v1/completions";
         var open_ai_response;
 
@@ -32,8 +32,8 @@ class ChatGPT {
         var data = `{
             "model": "text-davinci-003",
             "prompt": "${prompt_text}",
-            "temperature": 0.85,
-            "max_tokens": 500,
+            "temperature": ${temperature},
+            "max_tokens": ${max_tokens},
             "top_p": 1,
             "frequency_penalty": 0,
             "presence_penalty": 0
@@ -51,6 +51,8 @@ class ChatGPT {
         let editedPrompt = "Simplify these steps as much as possible: " + prompt + " and keep the steps separated by semi-colons. Please also make the new steps be a description of an image depicting the step."
         return this.generateText(editedPrompt)
     }
+
+    //Make below used on each instruction individually, similar to dalle calls, break instructions by semicolon
 
     getDetailedImageDescription(question, bulletpoints){
         let editedPrompt = "Take the main topic of each bullet point below. And keep in mind the problem " + question + " . And create only one descriptive image for each point separating each by a semicolon. "  + bulletpoints
