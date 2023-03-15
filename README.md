@@ -1,7 +1,8 @@
+# This branch is an archive of the progress we made on the project by the end of the codefest event.
+
 # Apple Juice - Instruction/Troubleshooter AI
 ![](https://i.ibb.co/rdGjVwN/Header-Image.png)
 
-**This branch is an archive of the progress we made on the project by the end of the codefest event.**
 
 Our team's Philly CodeFest 2023 challenge was to use AI image generation to help users troubleshoot their problems. We have created a website that allows users to input a problem they are experiencing, and in response uses AI to generate a comprehensive step-by-step guide with accompanying images to guide the user to a solution.
 
