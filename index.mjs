@@ -102,41 +102,19 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-var __dirname = new URL('.', import.meta.url).pathname;
-
-// Serve the index.html file as the root route
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
-// Serve the index.html file as the root route
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/chatgpt.js');
-});
-
-// Serve the index.html file as the root route
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/dalle.js');
-});
-
-// Serve the index.html file as the root route
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/apple-juice.png');
-});
-
-// Serve the index.html file as the root route
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/favicon.ico');
-});
+var options = {
+    dotfiles: 'ignore',
+    etag: false,
+    extensions: ['htm', 'html','css','js','mjs','ico','jpg','jpeg','png','svg'],
+    index: ['index.html'],
+    maxAge: '1m',
+    redirect: false
+}
+app.use(express.static('', options))
 
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
-});
-
-// Serve the style.css file
-app.get('/index.css', (req, res) => {
-    res.sendFile(__dirname + '/index.css');
 });
 
 
