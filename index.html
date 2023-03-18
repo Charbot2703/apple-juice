@@ -7,7 +7,12 @@
         <script type="text/javascript" src="chatgpt.js"></script>
         <script type="text/javascript" src="dalle.js"></script>
         <script type="module" src="main.mjs"></script>
-        <script>import { submit } from './main.js';</script>
+        <script type="module">
+            import { submit } from './main.mjs';
+          
+            const myButton = document.querySelector('#submit');
+            myButton.addEventListener('click', submit);
+        </script>
     </head>
     <body>
         <div id="intro">
@@ -19,7 +24,7 @@
             </div>
             <div id="submission">
                 <input type="text" id="input" name="fname" placeholder="Enter a prompt...">
-                <button id="submit" type="submit" onclick="submit()">Generate</button>
+                <button id="submit" type="submit">Generate</button>
             </div>
         </div>
         <div id="instructions-grid"></div>
