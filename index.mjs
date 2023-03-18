@@ -102,6 +102,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+var __dirname = new URL('.', import.meta.url).pathname;
+
 var options = {
     dotfiles: 'ignore',
     etag: false,
@@ -110,7 +112,7 @@ var options = {
     maxAge: '1m',
     redirect: false
 }
-app.use(express.static('', options))
+app.use(express.static(__dirname, options))
 
 // Start the server
 app.listen(PORT, () => {
