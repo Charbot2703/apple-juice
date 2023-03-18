@@ -93,13 +93,12 @@ class Main {
     }
 }
 
-import express from './express';
+const express = require('express');
 const app = express();
 
 const PORT = 3000;
 
-import dotenv from './dotenv';
-
+const dotenv = require('dotenv');
 dotenv.config();
 
 var __dirname = new URL('.', import.meta.url).pathname;
