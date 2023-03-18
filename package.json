@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
   "test": "echo \"No test specified\" && exit 1",
-  "start": "node main.js"
+  "start": "node main.mjs"
   },
   "repository": {
   "type": "git",
