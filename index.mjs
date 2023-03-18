@@ -93,12 +93,12 @@ class Main {
     }
 }
 
-import express from 'express';
+import express from './express';
 const app = express();
 
 const PORT = 3000;
 
-import dotenv from 'dotenv';
+import dotenv from './dotenv';
 
 dotenv.config();
 
