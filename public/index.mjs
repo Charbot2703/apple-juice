@@ -93,31 +93,6 @@ class Main {
     }
 }
 
-const express = require('express');
-const app = express();
-
-const PORT = 3000;
-
-const dotenv = require('dotenv');
-dotenv.config();
-
-var __dirname = new URL('.', import.meta.url).pathname;
-
-var options = {
-    dotfiles: 'ignore',
-    etag: false,
-    extensions: ['htm', 'html','css','js','mjs','ico','jpg','jpeg','png','svg'],
-    index: ['index.html'],
-    maxAge: '1m',
-    redirect: false
-}
-app.use(express.static(__dirname, options))
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
-
 
 //Get the input from the html file
 let main = new Main();
