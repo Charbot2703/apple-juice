@@ -12,28 +12,23 @@ class Main {
         window.dallEResponse = [];
         //Get Detailed instructions
         this.detailedInstructionPromise = window.ChatGPT.getDetailed(input)
-        await new Promise(r => setTimeout(r, 8000));
+        while(window.open_ai_response == null)
+        {
+            await new Promise(r => setTimeout(r, 1000));
+        }
         let responseDetail = window.open_ai_response.choices[0].text;
         responseDetail = responseDetail.replace(/(\r\n|\n|\r)/gm, "").replace(/"/g, "'")
         console.log("Response:")
         console.log(responseDetail)
 
         this.detailedImageInstructions = window.ChatGPT.getDetailedImageDescription(input, responseDetail)
-        await new Promise(r => setTimeout(r, 8000));
+        while(window.open_ai_response == null)
+        {
+            await new Promise(r => setTimeout(r, 1000));
+        }
         let detailedImageResponse = window.open_ai_response.choices[0].text;
         detailedImageResponse = detailedImageResponse.replace(/(\r\n|\n|\r)/gm, "").replace(/"/g, "'");
         console.log(detailedImageResponse)
-
-        //Commented out for now because above makes it better ^^^
-
-        //window.open_ai_response.choices[0].text is response
-        //Get Simple instruction block
-        //this.simpleInstructionPromise = window.ChatGPT.getSimple(responseDetail);
-        // await new Promise(r => setTimeout(r, 8000));
-        //let response = window.open_ai_response.choices[0].text;
-        //response = response.substr(2)
-        // console.log("Simple Response")
-        // console.log(response)
 
         //Break simple instructions block into array of steps
         
