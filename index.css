@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #2d2b32;
+    text-align: center;
+    display: block;
+}
+
+h1 {
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 4px;
+    color: #FFFAE7;
+}
+
+p {
+    font-size: 30px;
+    color: #FFFAE7;
+}
+
+#description {
+    font-size: 15px;
+    color: #FFFAE7;
+    padding: 10px 0px 0px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#intro{
+    height: 500px;
+    margin: 0px;
+    background-image: url("apple-juice.png");
+    background-size: 100%;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#submission{
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin: 40px 0px;
+}
+
+#header{
+    color: black;
+    width: 100%;
+    grid-area: header;
+    text-align: center;
+    padding: 100px 0px 20px 0px;
+}
+
+#input{
+    width: 640px;
+    height: 100%;
+    font-size: 15px;
+    background: #FFFAE7;
+    border: none;
+    /*grid-area: input;*/
+    border-radius: 10px;
+    display: inline-block;
+    padding: 0px 10px;
+    margin: 0px 5px;
+    transition: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+#input:hover{
+    width: 700px;
+}
+
+#input:focus{
+    width: 700px;
+}
+
+#submit{
+    width: 128px;
+    height: 100%;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFAE7;
+    background: #2d2b32;
+    border: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    background: #434147;
+    cursor: pointer;
+}
+
+.image{
+    width: 512px;
+    height: 512px;
+    background: #52392F;
+    grid-area: image;
+    box-shadow: 10px 0px 10px;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.image img{
+    border-radius: 0px 25px 25px 0px;
+}
+
+.instruct{
+    width: 256px;
+    height: 512px;
+    color:black;
+    background: #FFFAE7;
+    color: black;
+    box-shadow: 5px 0px 20px;
+    border-radius: 25px 0px 0px 25px;
+}
+
+.instruct p{
+    padding: 50%;
+    margin-top:60%;
+    font-size: 20px;
+    color: black;
+    padding: 15px 15px;
+    text-align: justify;
+}
+
+#instructions-grid{
+    padding: 40px;
+}
+
+.grid-item{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#page-info{
+    font-size: 15px;
+    padding: 30px;
+}

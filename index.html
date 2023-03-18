@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Apple Juice Instructions Generator</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script type="text/javascript" src="chatgpt.js"></script>
+        <script type="text/javascript" src="dalle.js"></script>
+        <script type="module" src="main.js"></script>
+        <script>import { submit } from './main.js';</script>
+    </head>
+    <body>
+        <div id="intro">
+            <div id="header">
+                <h1>APPLE JUICE</h1>
+                <p>instructions generator</p>
+                <p id="description">Enter a prompt for the instructions you would like to generate.<br>
+                    Examples include "walking a dog" or "making a sandwich".</p>
+            </div>
+            <div id="submission">
+                <input type="text" id="input" name="fname" placeholder="Enter a prompt...">
+                <button id="submit" type="submit" onclick="submit()">Generate</button>
+            </div>
+        </div>
+        <div id="instructions-grid"></div>
+        <p id="page-info">This generator is powered by the OpenAI API using models ChatGPT 3 and DALL-E 2.</p>
+    </body>
+</html>

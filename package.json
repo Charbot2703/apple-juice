@@ -1,0 +1,22 @@
+{
+  "name": "apple-juice",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+  "test": "echo \"No test specified\" && exit 1",
+  "start": "node main.js"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Charbot2703/apple-juice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  "url": "https://github.com/Charbot2703/apple-juice/issues"
+  },
+  "homepage": "https://github.com/Charbot2703/apple-juice#readme",
+  "dependencies": {
+    "openai": "^3.2.1"
+  }
+}
