@@ -104,27 +104,27 @@ dotenv.config();
 
 // Serve the index.html file as the root route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile('./index.html');
 });
 
 // Serve the index.html file as the root route
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/chatgpt.js');
+    res.sendFile('./chatgpt.js');
 });
 
 // Serve the index.html file as the root route
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/dalle.js');
+    res.sendFile('./dalle.js');
 });
 
 // Serve the index.html file as the root route
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/apple-juice.png');
+    res.sendFile('./apple-juice.png');
 });
 
 // Serve the index.html file as the root route
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/favicon.ico');
+    res.sendFile('./favicon.ico');
 });
 
 // Start the server
@@ -134,7 +134,7 @@ app.listen(PORT, () => {
 
 // Serve the style.css file
 app.get('/index.css', (req, res) => {
-    res.sendFile(__dirname + '/index.css');
+    res.sendFile('./index.css');
 });
 
 
