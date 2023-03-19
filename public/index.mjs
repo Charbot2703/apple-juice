@@ -10,6 +10,7 @@ class Main {
     async processInputFromUser(input)
     {
         window.dallEResponse = [];
+        window.open_ai_response = null;
         //Get Detailed instructions
         this.detailedInstructionPromise = window.ChatGPT.getDetailed(input)
         while(window.open_ai_response == null)
@@ -22,6 +23,7 @@ class Main {
         console.log(responseDetail)
 
         this.detailedImageInstructions = window.ChatGPT.getDetailedImageDescription(input, responseDetail)
+        window.open_ai_response = null;
         while(window.open_ai_response == null)
         {
             await new Promise(r => setTimeout(r, 1000));
