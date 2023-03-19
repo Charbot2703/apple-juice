@@ -17,6 +17,8 @@ class ChatGPT {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 window.open_ai_response = JSON.parse(xhr.responseText);
+                window.hasResponse = true;
+                console.log("recieved answer")
             }
         };
 

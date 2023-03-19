@@ -12,8 +12,9 @@ class Main {
         window.dallEResponse = [];
         window.open_ai_response = null;
         //Get Detailed instructions
+        window.hasReponse = false;
         this.detailedInstructionPromise = window.ChatGPT.getDetailed(input)
-        while(window.open_ai_response == null)
+        while(!window.hasReponse)
         {
             await new Promise(r => setTimeout(r, 1000));
         }
@@ -24,7 +25,8 @@ class Main {
 
         this.detailedImageInstructions = window.ChatGPT.getDetailedImageDescription(input, responseDetail)
         window.open_ai_response = null;
-        while(window.open_ai_response == null)
+        window.hasReponse = false;
+        while(!window.hasReponse)
         {
             await new Promise(r => setTimeout(r, 1000));
         }
