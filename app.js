@@ -6,8 +6,6 @@ const PORT = 3000;
 const dotenv = require('dotenv');
 dotenv.config();
 
-window.OPENAI_KEY = process.env.OPENAI_KEY;
-
 var options = {
     dotfiles: 'ignore',
     etag: false,
