@@ -18,4 +18,9 @@ var options = {
 }
 app.use(express.static('public', options))
 
+app.get('/env', (req, res) => {
+    res.json(process.env);
+});
+  
+
 module.exports = app

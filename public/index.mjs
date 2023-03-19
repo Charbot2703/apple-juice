@@ -94,6 +94,15 @@ class Main {
 }
 
 
+fetch('/env')
+  .then(response => response.json())
+  .then(env => {
+    window.MY_ENV_VAR = env.MY_ENV_VAR;
+    window.MY_OTHER_ENV_VAR = env.MY_OTHER_ENV_VAR;
+    // set other environment variables as global variables as needed
+});
+
+
 //Get the input from the html file
 let main = new Main();
 
