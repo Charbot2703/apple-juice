@@ -11,7 +11,7 @@ class DallE {
 
     xhr.setRequestHeader("Content-Type", "application/json");
 
-    xhr.setRequestHeader("Authorization", "Bearer " + process.env.OPENAI_KEY);
+    xhr.setRequestHeader("Authorization", "Bearer " + window.OPENAI_KEY);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
