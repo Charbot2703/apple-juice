@@ -1,6 +1,6 @@
 class DallE {
   constructor() {
-    this.key = "tl.ufNMSuhp[yBMXce[Sm5mU4CmclGKsGtyjl8qq8PvR9LhBvnL"
+     this.key = "tl.UWGk{v3hhZKgNNukdc3PU4CmclGK2rj:{UrHJn:9PCiO21jM"
   }
 
   async getImage(prompt_text, input, i) {
