@@ -1,7 +1,7 @@
 
 class ChatGPT {
     constructor() { 
-        this.key = "tl.UWGk{v3hhZKgNNukdc3PU4CmclGK2rj:{UrHJn:9PCiO21jM"
+        this.key = "tl.36TZyKZscmER{hLe3gEFU4CmclGKBpGJiXtSzkJtQctU1ZVH"
     }
 
     async generateText(prompt_text, model = "text-davinci-003", max_tokens = 1250, temperature = 0.85) {
